@@ -1,0 +1,28 @@
+ALGORITHM read_a_sentence
+<ENTER YOUR SENTENCE>
+VAR
+C:Charater
+NC:INTEGER:=0
+NW:INTERGER:=0
+NV:INTEGER:=0
+BEGIN
+Write (SENTENCE)
+Read (SENTENCE)
+WHILE(C<>".")DO
+READ C;
+NC:=NC+1;
+IF(C=" ")
+NW:=NW+1;
+END IF
+IF(C=a||C=e||C=i||C=o||C=y)
+NV:=NV+1;
+END IF
+END_WHILE
+Write(NC)
+Write(NW)
+Write(NV)
+END
+
+
+
+
