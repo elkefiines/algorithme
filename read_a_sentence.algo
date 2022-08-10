@@ -1,5 +1,5 @@
 ALGORITHM read_a_sentence
-<ENTER YOUR SENTENCE>
+
 VAR
 C:Charater
 NC:INTEGER:=0
