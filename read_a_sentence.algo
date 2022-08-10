@@ -1,22 +1,20 @@
 ALGORITHM read_a_sentence
-
 VAR
-C:Charater
+C:Char
 NC:INTEGER:=0
 NW:INTERGER:=0
 NV:INTEGER:=0
 BEGIN
-Write (SENTENCE)
-Read (SENTENCE)
-WHILE(C<>".")DO
-READ C;
-NC:=NC+1;
-IF(C=" ")
-NW:=NW+1;
-END IF
-IF(C=a||C=e||C=i||C=o||C=y)
-NV:=NV+1;
-END IF
+WHILE(C<>"" or c<>".")DO
+    write("enter the sentence");
+    read(c);
+    NC:=NC+1;
+    IF(C="a" or C="e" or C="i" or C="o" or C="u" or C="y") then
+    NV:=NV+1;
+    END IF
+END_WHILE
+WHILE (C=" "or c=".") DO
+    NW:=NW+1;
 END_WHILE
 Write(NC)
 Write(NW)
