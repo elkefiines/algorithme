@@ -1,0 +1,46 @@
+FUNCTION Dot_product(V1,V2: ARRAY_OF FLOAT) : FLOAT
+VAR
+    i:INTEGER;
+    ps: FLOAT:=0;
+BEGIN
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+       ps := ps + V1[i]*V2[i]
+    END_FOR
+    RETURN ps ;
+END
+PROCEDURE read_matrix(n,m:INTEGR, VAR T:ARRAY_OF FLOAT)
+VAR
+    i,j:INTEGER;
+BEGIN
+     FOR i FROM 0 TO n-1 STEP 1  DO
+       FOR j FROM 0 TO m-1 STEP 1  DO
+        Read(T[i][j]);
+       END_FOR
+    END_FOR
+END
+ALGORITHM Dot_Product
+VAR
+    n,m,i,j: INTEGER;
+    pairs: ARRAY_OF FLOAT[50][50];
+    ps: FLOAT;
+BEGIN
+    REPEAT
+        Write("enter n");
+        Read(n);
+    UNTIL (n>=2 AND n<=50 AND n % 2 =0)
+REPEAT
+        Write("enter m");
+        Read(m);
+    UNTIL (n>=1 AND n<=50 )
+
+    read_matrix(n,m,pairs);
+
+    FOR i FROM 0 TO n-1 STEP 1 DO
+    ps := Dot_product(pairs[i],pairs[i+1]);
+    IF (ps=0) THEN
+        write(pairs[i], "and", pairs[i+1], "are orthogonals");
+    END_IF
+    END_FOR
+    
+
+END
